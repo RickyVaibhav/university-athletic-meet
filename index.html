@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Athletic Meet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="landing-page">
+        <h1>BIT MESRA </h1>
+        <h2>Athletic Meet</h2>
+        <!-- Add additional content here -->
+    </div>
+    <div class="login-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'user')">Login as User</button>
+            <button class="tab-button" onclick="openTab(event, 'admin')">Login as Admin</button>
+        </div>
+        <div id="user" class="tab-content active">
+            <h2>User Login</h2>
+            <form id="user-login-form">
+                <label for="user-username">Username:</label>
+                <input type="text" id="user-username" name="username" required>
+                <label for="user-password">Password:</label>
+                <input type="password" id="user-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="admin" class="tab-content">
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <label for="admin-username">Username:</label>
+                <input type="text" id="admin-username" name="username" required>
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
