@@ -7,6 +7,14 @@ function showSection(sectionId) {
     // Show the specified section
     document.getElementById(sectionId).style.display = 'block';
 }
+function showHome() {
+    // Hide all sections except for the home section
+    document.getElementById('home-section').style.display = 'block';
+    document.getElementById('events-section').style.display = 'none';
+    document.getElementById('announcements-section').style.display = 'none';
+    document.getElementById('captains-section').style.display = 'none';
+}
+
 
 // Function to fetch and render events from local storage
 function fetchEvents() {
