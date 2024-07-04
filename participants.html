@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant Dashboard - University Athletic Meet</title>
+    <link rel="stylesheet" href="participants-style.css">
+</head>
+<body>
+    <div class="participant-dashboard">
+        <header>
+            <h1>Participant Dashboard</h1>
+            <nav>
+                <button onclick="showSection('events-section')">Events</button>
+                <button onclick="showSection('announcements-section')">Announcements</button>
+                <button onclick="showSection('all-participants-section')">All Participants</button>
+                <button onclick="logout()">Logout</button>
+            </nav>
+        </header>
+        <main>
+            <section id="events-section" class="participant-section">
+                <h2>Events</h2>
+                <div id="events-list">
+                    <!-- Events will be rendered here -->
+                </div>
+            </section>
+            <section id="announcements-section" class="participant-section">
+                <h2>Announcements</h2>
+                <div id="announcements-list">
+                    <!-- Announcements will be rendered here -->
+                </div>
+            </section>
+            <section id="all-participants-section" class="participant-section">
+                <h2>All Participants</h2>
+                <div id="all-participants-list">
+                    <!-- Participants with events will be rendered here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="participant-script.js"></script>
+</body>
+</html>

@@ -3,49 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Captain Dashboard - University Athletic Meet</title>
+    <title>User Dashboard - University Athletic Meet</title>
     <link rel="stylesheet" href="captain-styles.css">
 </head>
 <body>
-    <div class="captain-dashboard">
+    <div class="Captain-dashboard">
         <header>
-            <h1>Hostel Captain Dashboard</h1>
+            <h1>Captain Dashboard</h1>
             <nav>
-                <button onclick="showSection('view-events')">View Events</button>
-                <button onclick="showSection('view-announcements')">View Announcements</button>
-                <button onclick="showSection('manage-participants')">Manage Participants</button>
+                <button onclick="fetchEvents()">View Events</button>
+                <button onclick="fetchAnnouncements()">View Announcements</button>
+                <button onclick="fetchCaptains()">View Captains</button>
                 <button onclick="logout()">Logout</button>
             </nav>
         </header>
         <main>
-            <section id="view-events" class="captain-section">
+            <section id="events-section" style="display:none;">
                 <h2>Events</h2>
-                <div id="events-list">
-                    <!-- List of events will be rendered here -->
-                </div>
+                <div id="events-list"></div>
             </section>
-            <section id="view-announcements" class="captain-section">
+            <section id="announcements-section" style="display:none;">
                 <h2>Announcements</h2>
-                <div id="announcements-list">
-                    <!-- List of announcements will be rendered here -->
-                </div>
+                <div id="announcements-list"></div>
             </section>
-            <section id="manage-participants" class="captain-section">
-                <h2>Manage Participants</h2>
-                <button onclick="showParticipantForm()">Add New Participant</button>
-                <div id="participant-form" class="form-container">
-                    <h3>Add Participant</h3>
-                    <form id="participant-form">
-                        <label for="participant-name">Name:</label>
-                        <input type="text" id="participant-name" name="name" required>
-                        <label for="participant-event">Event:</label>
-                        <input type="text" id="participant-event" name="event" required>
-                        <button type="submit">Save Participant</button>
-                    </form>
-                </div>
-                <div id="participants-list">
-                    <!-- List of participants will be rendered here -->
-                </div>
+            <section id="captains-section" style="display:none;">
+                <h2>Captains</h2>
+                <div id="captains-list"></div>
             </section>
         </main>
     </div>

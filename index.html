@@ -8,22 +8,23 @@
 </head>
 <body>
     <div class="landing-page">
-        <h1>BIT MESRA </h1>
+        <h1>BIT MESRA</h1>
         <h2>Athletic Meet</h2>
         <!-- Add additional content here -->
     </div>
     <div class="login-container">
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'user')">Login as User</button>
+            <button class="tab-button active" onclick="openTab(event, 'captain')">Login as Captain</button>
             <button class="tab-button" onclick="openTab(event, 'admin')">Login as Admin</button>
+            <button class="tab-button" onclick="openTab(event, 'participant')">Login as Participant</button> <!-- New tab button -->
         </div>
-        <div id="user" class="tab-content active">
-            <h2>User Login</h2>
-            <form id="user-login-form">
-                <label for="user-username">Username:</label>
-                <input type="text" id="user-username" name="username" required>
-                <label for="user-password">Password:</label>
-                <input type="password" id="user-password" name="password" required>
+        <div id="captain" class="tab-content active">
+            <h2>Captain Login</h2>
+            <form id="captain-login-form">
+                <label for="captain-username">Username:</label>
+                <input type="text" id="captain-username" name="username" required>
+                <label for="captain-password">Password:</label>
+                <input type="password" id="captain-password" name="password" required>
                 <button type="submit">Login</button>
             </form>
         </div>
@@ -37,7 +38,35 @@
                 <button type="submit">Login</button>
             </form>
         </div>
+        <div id="participant" class="tab-content">
+            <h2>Participant Login</h2>
+            <form id="participant-login-form">
+                <label for="participant-username">Username:</label>
+                <input type="text" id="participant-username" name="username" required>
+                <label for="participant-password">Password:</label>
+                <input type="password" id="participant-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="announcements-list"></div>
     </div>
     <script src="script.js"></script>
+    <script>
+        async function fetchAnnouncements() {
+            const response = await fetch('http://localhost:3000/announcements');
+            const announcements = await response.json();
+            const announcementList = document.getElementById('announcements-list');
+            
+            announcements.forEach(announcement => {
+                const listItem = document.createElement('div');
+                listItem.textContent = `${announcement.title}: ${announcement.content}`;
+                announcementList.appendChild(listItem);
+            });
+        }
+    
+        window.onload = function() {
+            fetchAnnouncements();
+        };
+    </script>
 </body>
 </html>

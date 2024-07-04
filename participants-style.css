@@ -1,0 +1,52 @@
+/* Style for participant dashboard */
+.participant-dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav button {
+    margin-right: 10px;
+}
+
+.participant-section {
+    display: none;
+}
+
+.participant-section.active {
+    display: block;
+}
+
+/* Style for events and announcements */
+#events-list, #announcements-list, #your-events-list {
+    margin-top: 10px;
+}
+
+.event-item, .announcement-item, .your-event-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Style for buttons */
+button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

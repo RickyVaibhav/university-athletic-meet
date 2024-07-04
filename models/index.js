@@ -1,16 +1,12 @@
-const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: 'database.sqlite'
-});
+const sequelize = require('../config/database');
 
-const Announcement = require('./announcement')(sequelize);
-const Captain = require('./captain')(sequelize);
-const Event = require('./event')(sequelize);
+const Announcement = require('./announcement');
+const Captain = require('./captain');
+const Event = require('./event');
 
 module.exports = {
-  sequelize,
-  Announcement,
-  Captain,
-  Event
+    sequelize,
+    Announcement,
+    Captain,
+    Event
 };

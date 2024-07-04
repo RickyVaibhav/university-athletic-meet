@@ -1,4 +1,4 @@
-const { Event } = require('../models');
+const Event = require('../models/event');
 
 const getAllEvents = async (req, res) => {
     try {
@@ -19,6 +19,6 @@ const createEvent = async (req, res) => {
     }
 };
 
-// Add other controller methods like update and delete here
+// Add other methods like update and delete
 
 module.exports = { getAllEvents, createEvent };

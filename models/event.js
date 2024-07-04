@@ -1,14 +1,20 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {
-  return sequelize.define('Event', {
+class Event extends Model {}
+
+Event.init({
     name: {
-      type: DataTypes.STRING,
-      allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false
     },
     date: {
-      type: DataTypes.DATE,
-      allowNull: false
+        type: DataTypes.DATE,
+        allowNull: false
     }
-  });
-};
+}, {
+    sequelize: require('../config/database'), // Import sequelize instance
+    modelName: 'Event',
+    timestamps: true
+});
+
+module.exports = Event;

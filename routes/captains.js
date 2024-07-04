@@ -1,6 +1,6 @@
 const express = require('express');
-const { getAllCaptains, createCaptain } = require('../controllers/captainController');
 const router = express.Router();
+const { getAllCaptains, createCaptain } = require('../controllers/captainController');
 
 router.get('/', getAllCaptains);
 router.post('/', createCaptain);

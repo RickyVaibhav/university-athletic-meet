@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userLoginForm = document.getElementById('user-login-form');
+    const userLoginForm = document.getElementById('captain-login-form');
     const adminLoginForm = document.getElementById('admin-login-form');
-    const landingPage = document.getElementById('landing-page');
+    const participantLoginForm = document.getElementById('participant-login-form'); // New participant login form
 
     // Admin credentials (for demonstration purposes)
     const adminCredentials = {
@@ -15,16 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
         password: 'captain123'
     };
 
+    // Participant credentials (for demonstration purposes)
+    const participantCredentials = {
+        username: 'participant',
+        password: 'participant123'
+    };
+
     userLoginForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const username = document.getElementById('user-username').value;
-        const password = document.getElementById('user-password').value;
+        const username = document.getElementById('captain-username').value;
+        const password = document.getElementById('captain-password').value;
 
         if (username === captainCredentials.username && password === captainCredentials.password) {
             alert('Captain logged in successfully!');
             window.location.href = 'captain.html'; // Redirect to the captain dashboard
         } else {
-            alert('Invalid user credentials');
+            alert('Invalid captain credentials');
         }
     });
 
@@ -38,6 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'admin.html'; // Redirect to the admin dashboard
         } else {
             alert('Invalid admin credentials');
+        }
+    });
+
+    // Participant login form event listener
+    participantLoginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = document.getElementById('participant-username').value;
+        const password = document.getElementById('participant-password').value;
+
+        if (username === participantCredentials.username && password === participantCredentials.password) {
+            alert('Participant logged in successfully!');
+            window.location.href = 'participants.html'; // Redirect to the participant dashboard
+        } else {
+            alert('Invalid participant credentials');
         }
     });
 });
